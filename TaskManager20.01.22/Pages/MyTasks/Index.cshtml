@@ -1,0 +1,67 @@
+﻿@page
+@model TaskManager20._01._22.Pages.MyTasks.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.MyTask[0].MyTaskTitle)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MyTask[0].MyTaskAbout)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MyTask[0].MyTaskDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MyTask[0].MyTaskTerm)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MyTask[0].Category)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MyTask[0].Status)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.MyTask) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.MyTaskTitle)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MyTaskAbout)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MyTaskDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MyTaskTerm)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Category.CategoryName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status.StatusName)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.MyTaskId">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.MyTaskId">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.MyTaskId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

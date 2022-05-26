@@ -1,0 +1,62 @@
+﻿@page
+@model TaskManager20._01._22.Pages.MyTasks.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>MyTask</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.MyTask.MyTaskTitle)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.MyTask.MyTaskTitle)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.MyTask.MyTaskAbout)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.MyTask.MyTaskAbout)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.MyTask.MyTaskDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.MyTask.MyTaskDate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.MyTask.MyTaskTerm)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.MyTask.MyTaskTerm)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.MyTask.Category)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.MyTask.Category.CategoryName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.MyTask.Status)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.MyTask.Status.StatusName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.MyTask.User)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.MyTask.User.Id)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.MyTask.MyTaskId">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

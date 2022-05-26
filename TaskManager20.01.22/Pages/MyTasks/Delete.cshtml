@@ -1,0 +1,65 @@
+﻿@page
+@model TaskManager20._01._22.Pages.MyTasks.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<h1>Delete</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>MyTask</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.MyTask.MyTaskTitle)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.MyTask.MyTaskTitle)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.MyTask.MyTaskAbout)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.MyTask.MyTaskAbout)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.MyTask.MyTaskDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.MyTask.MyTaskDate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.MyTask.MyTaskTerm)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.MyTask.MyTaskTerm)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.MyTask.Category)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.MyTask.Category.CategoryName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.MyTask.Status)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.MyTask.Status.StatusName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.MyTask.User)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.MyTask.User.Id)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="MyTask.MyTaskId" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-page="./Index">Back to List</a>
+    </form>
+</div>

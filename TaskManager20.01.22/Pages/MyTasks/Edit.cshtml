@@ -1,0 +1,66 @@
+﻿@page
+@model TaskManager20._01._22.Pages.MyTasks.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<h1>Edit</h1>
+
+<h4>MyTask</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="MyTask.MyTaskId" />
+            <div class="form-group">
+                <label asp-for="MyTask.MyTaskTitle" class="control-label"></label>
+                <input asp-for="MyTask.MyTaskTitle" class="form-control" />
+                <span asp-validation-for="MyTask.MyTaskTitle" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MyTask.MyTaskAbout" class="control-label"></label>
+                <input asp-for="MyTask.MyTaskAbout" class="form-control" />
+                <span asp-validation-for="MyTask.MyTaskAbout" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MyTask.MyTaskDate" class="control-label"></label>
+                <input asp-for="MyTask.MyTaskDate" class="form-control" />
+                <span asp-validation-for="MyTask.MyTaskDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MyTask.MyTaskTerm" class="control-label"></label>
+                <input asp-for="MyTask.MyTaskTerm" class="form-control" />
+                <span asp-validation-for="MyTask.MyTaskTerm" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MyTask.CategoryId" class="control-label"></label>
+                <select asp-for="MyTask.CategoryId" class="form-control" asp-items="ViewBag.CategoryId"></select>
+                <span asp-validation-for="MyTask.CategoryId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MyTask.StatusId" class="control-label"></label>
+                <select asp-for="MyTask.StatusId" class="form-control" asp-items="ViewBag.StatusId"></select>
+                <span asp-validation-for="MyTask.StatusId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MyTask.UserId" class="control-label"></label>
+                <select asp-for="MyTask.UserId" class="form-control" asp-items="ViewBag.UserId"></select>
+                <span asp-validation-for="MyTask.UserId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
